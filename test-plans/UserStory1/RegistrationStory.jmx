@@ -32,7 +32,7 @@
         <stringProp name="TestPlan.comments">Any constant data you want to reuse can be stored in User Defined Variables. Keep in mind these values must be constant.</stringProp>
       </Arguments>
       <hashTree/>
-      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults">
+      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
         <stringProp name="TestPlan.comments">Any HTTP request constants should be set in here: they will be shared across all resources that make HTTP requests</stringProp>
         <stringProp name="HTTPSampler.domain">${HOST}</stringProp>
         <stringProp name="HTTPSampler.port">${PORT}</stringProp>
@@ -43,7 +43,7 @@
         <stringProp name="HTTPSampler.implementation"></stringProp>
       </ConfigTestElement>
       <hashTree/>
-      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager">
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
         <collectionProp name="CookieManager.cookies"/>
         <stringProp name="TestPlan.comments">The Cookie Manager makes sure to store and include any cookies provided by the service we are testing (like the browser would normally do)</stringProp>
         <boolProp name="CookieManager.clearEachIteration">false</boolProp>
@@ -68,7 +68,7 @@
           <stringProp name="TestPlan.comments">This is a storage tool for our test recording</stringProp>
         </RecordingController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Registration-/">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Registration-/" enabled="true">
             <stringProp name="HTTPSampler.domain">${HOST}</stringProp>
             <stringProp name="HTTPSampler.port">${PORT}</stringProp>
             <stringProp name="HTTPSampler.protocol">${SCHEME}</stringProp>
@@ -128,12 +128,12 @@
               </collectionProp>
             </HeaderManager>
             <hashTree/>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Click Register Link Delay">
+              <stringProp name="ConstantTimer.delay">2000</stringProp>
+              <stringProp name="RandomTimer.range">7000</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
           </hashTree>
-          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Click Register Link Delay">
-            <stringProp name="ConstantTimer.delay">2000</stringProp>
-            <stringProp name="RandomTimer.range">7000</stringProp>
-          </UniformRandomTimer>
-          <hashTree/>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Registration-/register.html" enabled="true">
             <stringProp name="HTTPSampler.domain">${HOST}</stringProp>
             <stringProp name="HTTPSampler.port">${PORT}</stringProp>
@@ -198,13 +198,13 @@
               </collectionProp>
             </HeaderManager>
             <hashTree/>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Register Account Delay">
+              <stringProp name="ConstantTimer.delay">3000</stringProp>
+              <stringProp name="RandomTimer.range">10000</stringProp>
+              <stringProp name="TestPlan.comments">How long does it take for the user to enter in their desired credentials</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
           </hashTree>
-          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Register Account Delay" enabled="true">
-            <stringProp name="ConstantTimer.delay">3000</stringProp>
-            <stringProp name="RandomTimer.range">10000</stringProp>
-            <stringProp name="TestPlan.comments">How long does it take for the user to enter in their desired credentials</stringProp>
-          </UniformRandomTimer>
-          <hashTree/>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Registration-/register" enabled="true">
             <stringProp name="HTTPSampler.domain">${HOST}</stringProp>
             <stringProp name="HTTPSampler.port">${PORT}</stringProp>
@@ -275,11 +275,18 @@
               </collectionProp>
             </HeaderManager>
             <hashTree/>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer">
+              <stringProp name="ConstantTimer.delay">2000</stringProp>
+              <stringProp name="TestPlan.comments">think timer for clicking registration</stringProp>
+            </ConstantTimer>
+            <hashTree/>
           </hashTree>
-          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer">
-            <stringProp name="ConstantTimer.delay">2000</stringProp>
-            <stringProp name="TestPlan.comments">Pacing timer</stringProp>
-          </ConstantTimer>
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Flow Control Action">
+            <intProp name="ActionProcessor.action">1</intProp>
+            <intProp name="ActionProcessor.target">0</intProp>
+            <stringProp name="ActionProcessor.duration">2000</stringProp>
+            <stringProp name="TestPlan.comments">pacing</stringProp>
+          </TestAction>
           <hashTree/>
         </hashTree>
         <ResultCollector guiclass="StatGraphVisualizer" testclass="ResultCollector" testname="Aggregate Graph" enabled="false">
@@ -319,7 +326,7 @@
           <stringProp name="filename"></stringProp>
         </ResultCollector>
         <hashTree/>
-        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -462,7 +469,7 @@
         <stringProp name="TestPlan.comments">This is where we configure JMeter to record our test scripts; we specift where to save the actions and what actions ot save</stringProp>
       </ProxyControl>
       <hashTree>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
