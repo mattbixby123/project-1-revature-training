@@ -46,69 +46,70 @@ INSERT INTO users (username, password) VALUES
 --- 2. TODOS TABLE SEEDING
 --- ===========================================================================
 
--- 2a. Tasks for VUs 61-90 (Story #3: Edit Task)
--- These give the Edit VUs an existing ID to target.
+--- 2. SEED TODOS FOR EDITING (VUs 61-90)
+-- These will become IDs 1 through 30
 INSERT INTO todos (task, completed, username) VALUES
-('Seed Task for Edit 61', false, 'username61'), ('Seed Task for Edit 62', false, 'username62'), ('Seed Task for Edit 63', false, 'username63'),
-('Seed Task for Edit 64', false, 'username64'), ('Seed Task for Edit 65', false, 'username65'), ('Seed Task for Edit 66', false, 'username66'),
-('Seed Task for Edit 67', false, 'username67'), ('Seed Task for Edit 68', false, 'username68'), ('Seed Task for Edit 69', false, 'username69'),
-('Seed Task for Edit 70', false, 'username70'), ('Seed Task for Edit 71', false, 'username71'), ('Seed Task for Edit 72', false, 'username72'),
-('Seed Task for Edit 73', false, 'username73'), ('Seed Task for Edit 74', false, 'username74'), ('Seed Task for Edit 75', false, 'username75'),
-('Seed Task for Edit 76', false, 'username76'), ('Seed Task for Edit 77', false, 'username77'), ('Seed Task for Edit 78', false, 'username78'),
-('Seed Task for Edit 79', false, 'username79'), ('Seed Task for Edit 80', false, 'username80'), ('Seed Task for Edit 81', false, 'username81'),
-('Seed Task for Edit 82', false, 'username82'), ('Seed Task for Edit 83', false, 'username83'), ('Seed Task for Edit 84', false, 'username84'),
-('Seed Task for Edit 85', false, 'username85'), ('Seed Task for Edit 86', false, 'username86'), ('Seed Task for Edit 87', false, 'username87'),
-('Seed Task for Edit 88', false, 'username88'), ('Seed Task for Edit 89', false, 'username89'), ('Seed Task for Edit 90', false, 'username90');
+('Initial Task 61', false, 'username61'), ('Initial Task 62', false, 'username62'),
+('Initial Task 63', false, 'username63'), ('Initial Task 64', false, 'username64'),
+('Initial Task 65', false, 'username65'), ('Initial Task 66', false, 'username66'),
+('Initial Task 67', false, 'username67'), ('Initial Task 68', false, 'username68'),
+('Initial Task 69', false, 'username69'), ('Initial Task 70', false, 'username70'),
+('Initial Task 71', false, 'username71'), ('Initial Task 72', false, 'username72'),
+('Initial Task 73', false, 'username73'), ('Initial Task 74', false, 'username74'),
+('Initial Task 75', false, 'username75'), ('Initial Task 76', false, 'username76'),
+('Initial Task 77', false, 'username77'), ('Initial Task 78', false, 'username78'),
+('Initial Task 79', false, 'username79'), ('Initial Task 80', false, 'username80'),
+('Initial Task 81', false, 'username81'), ('Initial Task 82', false, 'username82'),
+('Initial Task 83', false, 'username83'), ('Initial Task 84', false, 'username84'),
+('Initial Task 85', false, 'username85'), ('Initial Task 86', false, 'username86'),
+('Initial Task 87', false, 'username87'), ('Initial Task 88', false, 'username88'),
+('Initial Task 89', false, 'username89'), ('Initial Task 90', false, 'username90');
 
--- 2b. Parent Tasks for VUs 91-115 (Story #4: Create Subtask)
--- These VUs need a parent todo to successfully POST a subtask.
+--- 3. SEED TODOS FOR SUBTASK CREATION (VUs 91-115)
+-- These will become IDs 31 through 55
 INSERT INTO todos (task, completed, username) VALUES
-('Parent for Subtask 91', false, 'username91'), ('Parent for Subtask 92', false, 'username92'), ('Parent for Subtask 93', false, 'username93'),
-('Parent for Subtask 94', false, 'username94'), ('Parent for Subtask 95', false, 'username95'), ('Parent for Subtask 96', false, 'username96'),
-('Parent for Subtask 97', false, 'username97'), ('Parent for Subtask 98', false, 'username98'), ('Parent for Subtask 99', false, 'username99'),
-('Parent for Subtask 100', false, 'username100'), ('Parent for Subtask 101', false, 'username101'), ('Parent for Subtask 102', false, 'username102'),
-('Parent for Subtask 103', false, 'username103'), ('Parent for Subtask 104', false, 'username104'), ('Parent for Subtask 105', false, 'username105'),
-('Parent for Subtask 106', false, 'username106'), ('Parent for Subtask 107', false, 'username107'), ('Parent for Subtask 108', false, 'username108'),
-('Parent for Subtask 109', false, 'username109'), ('Parent for Subtask 110', false, 'username110'), ('Parent for Subtask 111', false, 'username111'),
-('Parent for Subtask 112', false, 'username112'), ('Parent for Subtask 113', false, 'username113'), ('Parent for Subtask 114', false, 'username114'),
-('Parent for Subtask 115', false, 'username115');
+('Parent Todo 91', false, 'username91'), ('Parent Todo 92', false, 'username92'),
+('Parent Todo 93', false, 'username93'), ('Parent Todo 94', false, 'username94'),
+('Parent Todo 95', false, 'username95'), ('Parent Todo 96', false, 'username96'),
+('Parent Todo 97', false, 'username97'), ('Parent Todo 98', false, 'username98'),
+('Parent Todo 99', false, 'username99'), ('Parent Todo 100', false, 'username100'),
+('Parent Todo 101', false, 'username101'), ('Parent Todo 102', false, 'username102'),
+('Parent Todo 103', false, 'username103'), ('Parent Todo 104', false, 'username104'),
+('Parent Todo 105', false, 'username105'), ('Parent Todo 106', false, 'username106'),
+('Parent Todo 107', false, 'username107'), ('Parent Todo 108', false, 'username108'),
+('Parent Todo 109', false, 'username109'), ('Parent Todo 110', false, 'username110'),
+('Parent Todo 111', false, 'username111'), ('Parent Todo 112', false, 'username112'),
+('Parent Todo 113', false, 'username113'), ('Parent Todo 114', false, 'username114'),
+('Parent Todo 115', false, 'username115');
 
--- 2c. Parent Tasks for VUs 116-140 (Story #4: Edit Subtask)
--- These need a Parent so we can link an existing subtask to them in Step 3.
+--- 4. SEED TODOS FOR SUBTASK EDITING (VUs 116-140)
+-- These will become IDs 56 through 80
 INSERT INTO todos (task, completed, username) VALUES
-('Parent for Sub-Edit 116', false, 'username116'), ('Parent for Sub-Edit 117', false, 'username117'), ('Parent for Sub-Edit 118', false, 'username118'),
-('Parent for Sub-Edit 119', false, 'username119'), ('Parent for Sub-Edit 120', false, 'username120'), ('Parent for Sub-Edit 121', false, 'username121'),
-('Parent for Sub-Edit 122', false, 'username122'), ('Parent for Sub-Edit 123', false, 'username123'), ('Parent for Sub-Edit 124', false, 'username124'),
-('Parent for Sub-Edit 125', false, 'username125'), ('Parent for Sub-Edit 126', false, 'username126'), ('Parent for Sub-Edit 127', false, 'username127'),
-('Parent for Sub-Edit 128', false, 'username128'), ('Parent for Sub-Edit 129', false, 'username129'), ('Parent for Sub-Edit 130', false, 'username130'),
-('Parent for Sub-Edit 131', false, 'username131'), ('Parent for Sub-Edit 132', false, 'username132'), ('Parent for Sub-Edit 133', false, 'username133'),
-('Parent for Sub-Edit 134', false, 'username134'), ('Parent for Sub-Edit 135', false, 'username135'), ('Parent for Sub-Edit 136', false, 'username136'),
-('Parent for Sub-Edit 137', false, 'username137'), ('Parent for Sub-Edit 138', false, 'username138'), ('Parent for Sub-Edit 139', false, 'username139'),
+('Parent for Sub-Edit 116', false, 'username116'), ('Parent for Sub-Edit 117', false, 'username117'),
+('Parent for Sub-Edit 118', false, 'username118'), ('Parent for Sub-Edit 119', false, 'username119'),
+('Parent for Sub-Edit 120', false, 'username120'), ('Parent for Sub-Edit 121', false, 'username121'),
+('Parent for Sub-Edit 122', false, 'username122'), ('Parent for Sub-Edit 123', false, 'username123'),
+('Parent for Sub-Edit 124', false, 'username124'), ('Parent for Sub-Edit 125', false, 'username125'),
+('Parent for Sub-Edit 126', false, 'username126'), ('Parent for Sub-Edit 127', false, 'username127'),
+('Parent for Sub-Edit 128', false, 'username128'), ('Parent for Sub-Edit 129', false, 'username129'),
+('Parent for Sub-Edit 130', false, 'username130'), ('Parent for Sub-Edit 131', false, 'username131'),
+('Parent for Sub-Edit 132', false, 'username132'), ('Parent for Sub-Edit 133', false, 'username133'),
+('Parent for Sub-Edit 134', false, 'username134'), ('Parent for Sub-Edit 135', false, 'username135'),
+('Parent for Sub-Edit 136', false, 'username136'), ('Parent for Sub-Edit 137', false, 'username137'),
+('Parent for Sub-Edit 138', false, 'username138'), ('Parent for Sub-Edit 139', false, 'username139'),
 ('Parent for Sub-Edit 140', false, 'username140');
 
--- 2d. Completed Tasks for VUs 141-180 (Story #5: View History)
--- We give each of these users 1 completed task so the 'GET' results aren't empty.
-INSERT INTO todos (task, completed, username) VALUES
-('History Item 141', true, 'username141'), ('History Item 142', true, 'username142'), ('History Item 143', true, 'username143'),
-('History Item 144', true, 'username144'), ('History Item 145', true, 'username145'), ('History Item 146', true, 'username146'),
-('History Item 147', true, 'username147'), ('History Item 148', true, 'username148'), ('History Item 149', true, 'username149'),
-('History Item 150', true, 'username150'), ('History Item 151', true, 'username151'), ('History Item 152', true, 'username152'),
-('History Item 153', true, 'username153'), ('History Item 154', true, 'username154'), ('History Item 155', true, 'username155'),
-('History Item 156', true, 'username156'), ('History Item 157', true, 'username157'), ('History Item 158', true, 'username158'),
-('History Item 159', true, 'username159'), ('History Item 160', true, 'username160'), ('History Item 161', true, 'username161'),
-('History Item 162', true, 'username162'), ('History Item 163', true, 'username163'), ('History Item 164', true, 'username164'),
-('History Item 165', true, 'username165'), ('History Item 166', true, 'username166'), ('History Item 167', true, 'username167'),
-('History Item 168', true, 'username168'), ('History Item 169', true, 'username169'), ('History Item 170', true, 'username170'),
-('History Item 171', true, 'username171'), ('History Item 172', true, 'username172'), ('History Item 173', true, 'username173'),
-('History Item 174', true, 'username174'), ('History Item 175', true, 'username175'), ('History Item 176', true, 'username176'),
-('History Item 177', true, 'username177'), ('History Item 178', true, 'username178'), ('History Item 179', true, 'username179'),
-('History Item 180', true, 'username180');
-
---- ===========================================================================
---- 3. SUBTASKS TABLE SEEDING
---- These link specifically to the 'Parent for Sub-Edit' tasks created above.
---- ===========================================================================
+--- 5. SEED SUBTASKS (For VUs 116-140 to edit)
+-- These will become subtask IDs 1 through 25
+-- They link to the todos with task name 'Parent for Sub-Edit...'
 INSERT INTO subtasks (task, completed, todo_id)
-SELECT 'Subtask to Edit', false, id 
+SELECT 'Initial Subtask', false, id 
 FROM todos 
 WHERE task LIKE 'Parent for Sub-Edit%';
+
+--- 6. SEED COMPLETED TASKS (VUs 141-180)
+-- These will become IDs 81 through 120
+INSERT INTO todos (task, completed, username)
+SELECT 'Archived Task', true, username 
+FROM users 
+WHERE username BETWEEN 'username141' AND 'username180';

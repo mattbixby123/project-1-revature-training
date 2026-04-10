@@ -72,7 +72,7 @@
           <stringProp name="variableNames"></stringProp>
         </CSVDataSet>
         <hashTree/>
-        <RecordingController guiclass="RecordController" testclass="RecordingController" testname="3b Edit Task Recording Controller" enabled="true"/>
+        <RecordingController guiclass="RecordController" testclass="RecordingController" testname="3b Edit Task Recording Controller"/>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="3b Edit Task / landing page start" enabled="true">
             <stringProp name="HTTPSampler.domain">${HOST}</stringProp>
@@ -347,7 +347,7 @@
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;id&quot;:1,&quot;${todo_id}&quot;:&quot;Edited Task&quot;,&quot;completed&quot;:false,&quot;user&quot;:{&quot;username&quot;:&quot;${username}&quot;},&quot;subtasks&quot;:[]}</stringProp>
+                  <stringProp name="Argument.value">{&quot;id&quot;:${todo_id},&quot;task&quot;:&quot;Edited Task&quot;,&quot;completed&quot;:false,&quot;user&quot;:{&quot;username&quot;:&quot;${username}&quot;},&quot;subtasks&quot;:[]}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
